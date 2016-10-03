@@ -1,0 +1,12 @@
+BEGIN
+	#Routine body goes here...
+	DECLARE C1x INT;
+	DECLARE C2x INT;
+	DECLARE x INT;
+	DECLARE fn1 INT;
+	SELECT column_key_x INTO C1x FROM secret_column WHERE column_name = Column1 AND table_name = TableName;
+	SELECT column_key_x INTO C2x FROM secret_column WHERE column_name = Column2 AND table_name = TableName;
+	SELECT fn INTO fn1 FROM global_info;
+	SET x = (C1x + C2x) MOD fn1;
+	RETURN x;
+END

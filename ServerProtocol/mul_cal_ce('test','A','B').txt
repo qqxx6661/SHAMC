@@ -1,0 +1,30 @@
+BEGIN
+	DECLARE Done INT DEFAULT 0;
+	DECLARE Ae INT;
+	DECLARE Be INT;
+	DECLARE rowid INT;
+	
+	#Shen Ming You Biao
+	DECLARE rs CURSOR FOR SELECT row_id,A,B FROM test;
+
+	#Yi Chang Chu Li
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET Done = 1;
+
+	#Da Kai You Biao
+	OPEN rs;
+
+	#Zhu GE
+	FETCH NEXT FROM rs INTO rowid,Ae,Be;
+
+	#Bian Li Shu Ju Biao
+	REPEAT
+		IF NOT Done THEN
+			#UPDATE operator_result SET result = Ae * Be WHERE row_id = rowid;
+			INSERT INTO operator_result VALUES(rowid,Ae * Be);
+		END IF;
+	FETCH NEXT FROM rs INTO rowid,Ae,Be;
+	UNTIL Done END REPEAT;
+
+	#Guan Bi You Biao
+	CLOSE rs;
+END;

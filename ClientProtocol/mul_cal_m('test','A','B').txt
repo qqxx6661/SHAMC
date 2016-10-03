@@ -1,0 +1,12 @@
+BEGIN
+	#Routine body goes here...
+  DECLARE C1m INT;
+  DECLARE C2m INT;
+	DECLARE n1 INT;
+	DECLARE m INT;
+	SELECT n INTO n1 FROM global_info;
+	SELECT column_key_m INTO C1m FROM secret_column WHERE column_name = Column1 AND table_name = TableName;
+	SELECT column_key_m INTO C2m FROM secret_column WHERE column_name = Column2 AND table_name = TableName;
+  SET m = (C1m * C2m)MOD n1;
+	RETURN m;
+END

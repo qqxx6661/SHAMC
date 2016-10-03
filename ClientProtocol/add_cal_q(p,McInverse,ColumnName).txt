@@ -1,0 +1,12 @@
+BEGIN
+	#Routine body goes here...
+	DECLARE q INT;
+	DECLARE Ma INT;
+	DECLARE Ms INT;
+	DECLARE n1 INT;
+	SELECT column_key_m INTO Ma FROM secret_column WHERE table_name = 'test' AND column_name = ColumnName;
+	SELECT column_key_m INTO Ms FROM secret_column WHERE table_name = 'test' AND column_name = 'S';
+	SELECT n INTO n1 FROM global_info;
+	SET q = (Ma * POW(Ms,p) * McInverse )MOD n1;
+ 	RETURN q;
+END

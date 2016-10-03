@@ -1,0 +1,10 @@
+BEGIN
+	#Routine body goes here...
+	DECLARE p INT;
+	DECLARE x INT;
+	DECLARE fn1 INT;
+	SELECT column_key_x INTO x FROM secret_column WHERE table_name = 'test' AND column_name = ColumnName;
+	SELECT fn INTO fn1 FROM global_info;
+	SET p = (XsInverse * ABS(Xc - x))MOD fn1;
+	RETURN p;
+END

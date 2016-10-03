@@ -1,0 +1,8 @@
+BEGIN
+	#Routine body goes here...
+	DECLARE m INT;
+	DECLARE n1 INT;
+	SELECT n INTO n1 FROM global_info;
+	SET m = FLOOR(1+(RAND()*n1));
+	RETURN m;
+END
