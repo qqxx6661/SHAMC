@@ -1,5 +1,7 @@
 # SMC_Yang
 
+************Warning: This is a sample application without full functions**************
+
 A secure cloud database model based on multi-cloud
 
 **This is an application for my paper Secure Model based on Multi-cloud for Big Data Storage and Query, published on CBD2016.**
