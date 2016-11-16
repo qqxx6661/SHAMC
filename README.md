@@ -1,6 +1,6 @@
 # SHAMC_Yang: A secure cloud database model based on multi-cloud
 
-************Warning: This is a sample application without full functions**************
+*******Warning: This is a tiny and tentative application running on Windows Server without full functions of SHAMC*********
 
 
 
