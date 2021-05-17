@@ -1,6 +1,6 @@
 # SHAMC_Yang: A secure cloud database model based on multi-cloud
 
-*******Warning: This is a tiny and tentative application running on Windows Server without full functions of SHAMC*********
+**Warning: This is a tiny and tentative application running on Windows Server without full functions of SHAMC**
 
 
 
@@ -14,14 +14,14 @@ This program is written by C# and Mysql UDF. It mainly realized an prototype wit
 
 Other functions are on our agenda.
 
-##**Runtime environment:**
+## **Runtime environment:**
 
 >- Mysql5.6
 >- Visual studio 2012
 
 Here we begin (use single cloud database for the example),
 
-###**Step1: Build the database**
+### **Step1: Build the database**
 
 Create 2 databases for the client and the server called keystore and serverdatabase seperately.
 Key store has two tables and six UDFs: Global_info, Secret_column; Add_cal_p, Add_cal_q, gen_ck_m, gen_ck_x, mul_cal_m, mul_cal_x;
@@ -34,14 +34,14 @@ Serverdatabase has two tables and three UDFs: Operator_result, test; Add_cal_ce,
 
 All the protocols based on UDFs are provided in our code.
 
-###**Step2: Configure the C# application**
+### **Step2: Configure the C# application**
 
 In ConnectToMysql.cs, we can set the Mysql settings.
 
 	string clientMysql = "Database=keystore;Data Source=127.0.0.1;User Id=root;Password=root;CharSet=utf8;port=3306";
 	string serverMysql = "Database=serverdatabase;Data Source=127.0.0.1;User Id=root;Password=root;CharSet=utf8;port=3306"
 
-###**Step3: Run the application**
+### **Step3: Run the application**
 
 You can use the visual stuio to run it.
 
